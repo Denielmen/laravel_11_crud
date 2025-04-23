@@ -18,8 +18,7 @@ btn-primary btn-sm">&larr; Back</a>
  </div>
  </div>
  <div class="card-body">
- <form action="{{ route('products.update', $product-
->id) }}" method="post">
+ <form action="{{ route('products.update', $product->id) }}" method="post">
  @csrf
 @method("PUT")
  <div class="mb-3 row">
@@ -29,8 +28,7 @@ btn-primary btn-sm">&larr; Back</a>
 @error('code') is-invalid @enderror" id="code" name="code" value="{{ 
 $product->code }}">
  @error('code')
- <span class="text-danger">{{ $message 
-}}</span>
+ <span class="text-danger">{{ $message }}</span>
  @enderror
  </div>
  </div>
