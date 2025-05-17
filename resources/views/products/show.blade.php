@@ -8,50 +8,68 @@
  Product Information
  </div>
  <div class="float-end">
- <a href="{{ route('products.index') }}" class="btn 
-btn-primary btn-sm">&larr; Back</a>
+ <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
  </div>
  </div>
  <div class="card-body">
  <div class="row">
- <label for="code" class="col-md-4 col-formlabel text-md-end text-start"><strong>Code:</strong></label>
- <div class="col-md-6" style="line-height:
-35px;">
+ <div class="col-md-7">
+ <div class="row mb-3">
+ <div class="col-md-4 text-center">
+ <strong>Code:</strong>
+ </div>
+ <div class="col-md-8 text-start">
  {{ $product->code }}
  </div>
  </div>
- <div class="row">
- <label for="name" class="col-md-4 col-formlabel text-md-end text-start"><strong>Name:</strong></label>
- <div class="col-md-6" style="line-height:
-35px;">
+ <div class="row mb-3">
+ <div class="col-md-4 text-center">
+ <strong>Name:</strong>
+ </div>
+ <div class="col-md-8 text-start">
  {{ $product->name }}
  </div>
  </div>
- <div class="row">
- <label for="quantity" class="col-md-4 colform-label text-md-end text-start"><strong>Quantity:</strong></label>
- <div class="col-md-6" style="line-height:
-35px;">
+ <div class="row mb-3">
+ <div class="col-md-4 text-center">
+ <strong>Quantity:</strong>
+ </div>
+ <div class="col-md-8 text-start">
  {{ $product->quantity }}
  </div>
  </div>
- <div class="row">
- <label for="price" class="col-md-4 col-formlabel text-md-end text-start"><strong>Price:</strong></label>
- <div class="col-md-6" style="line-height:
-35px;">
+ <div class="row mb-3">
+ <div class="col-md-4 text-center">
+ <strong>Price:</strong>
+ </div>
+ <div class="col-md-8 text-start">
  {{ $product->price }}
  </div>
  </div>
- <div class="row">
- <label for="description" class="col-md-4 colform-label text-md-end textstart"><strong>Description:</strong></label>
- <div class="col-md-6" style="line-height:
-35px;">
+ <div class="row mb-3">
+ <div class="col-md-4 text-center">
+ <strong>Description:</strong>
+ </div>
+ <div class="col-md-8 text-start">
  {{ $product->description }}
  </div>
  </div>
- 
+ </div>
+ <div class="col-md-5">
+ @if($product->image)
+ <div class="text-center">
+ <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" class="img-fluid rounded" style="max-height: 300px;">
+ </div>
+ @else
+ <div class="text-center text-muted">
+ <i class="bi bi-image" style="font-size: 5rem;"></i>
+ <p>No image available</p>
+ </div>
+ @endif
+ </div>
+ </div>
  </div>
  </div>
  </div> 
 </div>
- 
 @endsection
