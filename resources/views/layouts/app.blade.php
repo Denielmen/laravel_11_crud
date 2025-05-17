@@ -12,6 +12,27 @@ min.css">
 href="https://cdn.jsdelivr.net/npm/bootstrapicons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body> 
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+   <a class="navbar-brand" href="{{ route('products.index') }}">Product Management</a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+     <li class="nav-item">
+      <form action="{{ route('logout') }}" method="POST" class="d-inline">
+       @csrf
+       <button type="submit" class="btn btn-link nav-link">
+        <i class="bi bi-box-arrow-right"></i> Logout
+       </button>
+      </form>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+
  <div class="container">
  <h3 class=" mt-3">Simple Laravel 11 CRUD Application 
 Tutorial</h3>
