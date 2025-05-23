@@ -5,8 +5,8 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
-   //return view('welcome');
-    return redirect()->route('login');
+   return view('welcome');
+    // return redirect()->route('login');
 });
 
 // Protected Product Routes
@@ -25,6 +25,10 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Password Setting Routes
+Route::get('/set-password', [AuthController::class, 'showSetPasswordForm'])->name('set-password');
+Route::post('/set-password', [AuthController::class, 'setPassword']);
 
 // Protected route
 Route::get('/dashboard', function () {

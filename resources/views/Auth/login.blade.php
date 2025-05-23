@@ -132,7 +132,7 @@
             <input type="email" name="email" id="email" placeholder="you@example.com" required>
 
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required autocomplete="new-password">
 
             <button type="submit" class="btn">Login</button>
 
