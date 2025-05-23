@@ -5,9 +5,14 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
- return view('welcome');
+   // return view('welcome');
+    return redirect()->route('login');
 });
-Route::resource('products', ProductController::class);
+
+// Protected Product Routes
+Route::middleware(['auth'])->group(function () {
+    Route::resource('products', ProductController::class);
+});
 
 
 use App\Http\Controllers\AuthController;

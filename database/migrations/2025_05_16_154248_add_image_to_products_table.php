@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations.execute the migration
      */
     public function up(): void
     {
@@ -17,12 +17,14 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations. rollback the migration
      */
-    public function down(): void
+    public function down(): void 
     {
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('image');
         });
     }
 };
+
+//
